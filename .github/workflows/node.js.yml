@@ -22,13 +22,12 @@ jobs:
                   node-version: 18
 
             - name: Install dependencies
-              run: npm install
+              run: npm ci
 
             - name: Run Cypress tests
               uses: cypress-io/github-action@v6
               with:
-                  start: npm start # Start the app if required
-                  wait-on: "https://sweetshop.netlify.app" # Ensure the site is live before testing
+                  wait-on: "https://sweetshop.netlify.app" # Waits for Netlify site, no need to start local server
 
             - name: Upload Cypress screenshots and videos (on failure)
               if: failure()
