@@ -27,7 +27,6 @@ jobs:
             - name: Run Cypress tests
               uses: cypress-io/github-action@v6
               with:
-                  build: npm run build # If your project needs a build step
                   start: npm start # Start the app if required
                   wait-on: "https://sweetshop.netlify.app" # Ensure the site is live before testing
 
