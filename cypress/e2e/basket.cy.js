@@ -113,7 +113,7 @@ describe("SweetShop - Basket Page (Cart)", () => {
         });
         cy.visit(basketUrl);
         // Step 3: Verify Initial Basket Count
-        cy.get(".badge")
+        cy.get(".badge-pill")
             .should("be.visible")
             .invoke("text")
             .then((text) => {
@@ -128,7 +128,7 @@ describe("SweetShop - Basket Page (Cart)", () => {
         cy.on("window:confirm", () => true);
 
         // Step 5: Verify Basket Count is Updated
-        cy.get(".badge")
+        cy.get(".badge-pill")
             .should("be.visible")
             .invoke("text")
             .then((text) => {
