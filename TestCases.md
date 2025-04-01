@@ -210,12 +210,12 @@
     2. Verify the page has a description.
 -   **Expected Result:** Page has a description.
 
-### TC_4.3 Verify the page has a banner and it matches the year 2018.
+### TC_4.3 Verify the page has a footer and it matches the year 2018.
 
 -   **Steps:**
     1. Open the URL: [SweetShop/about](https://sweetshop.netlify.app/about)
-    2. Verify the page has a banner and it matches the year 2018.
--   **Expected Result:** Page has a banner and it matches the year 2018.
+    2. Verify the page has a footer and it matches the year 2018.
+-   **Expected Result:** Page has a footer and it matches the year 2018.
 
 ## TS_5 Login Page
 
