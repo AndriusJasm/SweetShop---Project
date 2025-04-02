@@ -1,8 +1,7 @@
 describe("SweetShop - Login Page", () => {
-    const url = "https://sweetshop.netlify.app/login";
-
+    const paragraphLoginDescription = ".lead";
     beforeEach(() => {
-        cy.visit(url);
+        cy.visitLoginPage();
     });
 
     it('TC_5.1 Verify the page title is "Login"', () => {
@@ -10,10 +9,10 @@ describe("SweetShop - Login Page", () => {
     });
 
     it("TC_5.2 Verify the page has a description", () => {
-        cy.get(".lead").and("be.visible").and("not.be.empty");
+        cy.get(paragraphLoginDescription).and("be.visible").and("not.be.empty");
     });
 
-    it("TC_5.5 Verify links to Twitter, Facebook, Linkedin", () => {
+    it("TC_5.3 Verify links to Twitter, Facebook, Linkedin", () => {
         cy.get('a[href*="twitter.com"]')
             .should("have.attr", "href")
             .and("include", "twitter.com");
@@ -25,33 +24,33 @@ describe("SweetShop - Login Page", () => {
             .and("include", "linkedin.com");
     });
 
-    it("TC_5.6 Positive with valid data", () => {
-        cy.get('input[type="email"]').type("validuser@example.com"); // Replace with actual valid email
-        cy.get('input[type="password"]').type("ValidPassword123"); // Replace with actual valid password
+    it("TC_5.4 Positive with valid data", () => {
+        cy.get('input[type="email"]').type("test@user.com");
+        cy.get('input[type="password"]').type("ValidPassword123");
         cy.contains("button", "Login").click();
-        cy.url().should("include", "/00efc23d-b605-4f31-b97b-6bb276de447e"); // Ensure successful navigation to "Your Account" page
+        cy.url().should("include", "/00efc23d-b605-4f31-b97b-6bb276de447e");
     });
 
-    it("TC_5.7 Negative with wrong email format", () => {
+    it("TC_5.5 Negative with wrong email format", () => {
         cy.get('input[type="email"]').type("invalidemail");
         cy.get('input[type="password"]').type("ValidPassword123");
         cy.contains("button", "Login").click();
         cy.contains("Please enter a valid email address.").should("be.visible");
     });
 
-    it("TC_5.8 Negative with empty email", () => {
+    it("TC_5.6 Negative with empty email", () => {
         cy.get('input[type="password"]').type("ValidPassword123");
         cy.contains("button", "Login").click();
         cy.contains("Please enter a valid email address.").should("be.visible");
     });
 
-    it("TC_5.9 Negative with empty password", () => {
-        cy.get('input[type="email"]').type("validuser@example.com");
+    it("TC_5.7 Negative with empty password", () => {
+        cy.get('input[type="email"]').type("test@user.com");
         cy.contains("button", "Login").click();
         cy.contains("Please enter a valid password.").should("be.visible");
     });
 
-    it("TC_5.10 Negative with empty email and empty password", () => {
+    it("TC_5.8 Negative with empty email and empty password", () => {
         cy.contains("button", "Login").click();
         cy.contains("Please enter a valid email address.").should("be.visible");
         cy.contains("Please enter a valid password.").should("be.visible");

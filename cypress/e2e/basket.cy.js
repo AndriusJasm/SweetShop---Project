@@ -55,7 +55,7 @@ describe("SweetShop - Basket Page (Cart)", () => {
         cy.get(navbarMenu).contains("Sweets").click();
         cy.addRandomItemsToBasket(numberOfItems);
         cy.get(navbarMenu).contains("Basket").click();
-        // Step 3: Verify Initial Basket Count
+        // Verify Initial Basket Count
         cy.get(navbarBasketCount)
             .should("be.visible")
             .invoke("text")
@@ -64,13 +64,12 @@ describe("SweetShop - Basket Page (Cart)", () => {
                 expect(initialCount).to.equal(numberOfItems);
             });
 
-        // Step 4: Remove One Item
         cy.get(deleteItem).first().click();
 
         // Handle Confirmation Popup
         cy.on("window:confirm", () => true);
 
-        // Step 5: Verify Basket Count is Updated
+        // Verify Basket Count is Updated
         cy.get(navbarBasketCount)
             .should("be.visible")
             .invoke("text")
@@ -84,26 +83,21 @@ describe("SweetShop - Basket Page (Cart)", () => {
         cy.get(navbarMenu).contains("Sweets").click();
         cy.addRandomItemsToBasket(numberOfItems);
         cy.get(navbarMenu).contains("Sweets").click();
-        // Pirmiausia patikriname, ar yra elementų su klase ".small"
+
         cy.get("body").then(($body) => {
             if ($body.find(deleteItem).length > 0) {
-                // Funkcija rekursyviai pašalina prekes
                 const deleteItem = () => {
                     cy.get("body").then(($body) => {
                         if ($body.find(deleteItem).length > 0) {
                             cy.get(deleteItem).first().click();
 
-                            // Patvirtiname išmetimo langą
                             cy.on("window:confirm", () => true);
 
-                            // Laukiame, kol elementas bus pašalintas
                             cy.wait(500);
 
-                            // Atkuriame puslapį, kad išvengtume DOM detachment problemų
                             cy.reload();
                             cy.wait(1000);
 
-                            // Rekursyviai pašaliname kitą elementą
                             deleteItem();
                         } else {
                             cy.log("Basket is empty");

@@ -233,56 +233,42 @@
     2. Verify the page has a description.
 -   **Expected Result:** Page has a description.
 
-### TC_5.3 Verify the page contains 'email' and 'password' input fields.
-
--   **Steps:**
-    1. Open the URL: [SweetShop/login](https://sweetshop.netlify.app/login)
-    2. Verify the page contains 'email' and 'password' input fields.
--   **Expected Result:** Page contains 'email' and 'password' input fields.
-
-### TC_5.4 Verify the page contains a 'Login' button.
-
--   **Steps:**
-    1. Open the URL: [SweetShop/login](https://sweetshop.netlify.app/login)
-    2. Verify the page contains a 'Login' button.
--   **Expected Result:** Page contains a 'Login' button.
-
-### TC_5.5 Verify links to Twitter, Facebook, Linkedin.
+### TC_5.3 Verify links to Twitter, Facebook, Linkedin.
 
 -   **Steps:**
     1. Open the URL: [SweetShop/login](https://sweetshop.netlify.app/login)
     2. Verify links to Twitter, Facebook, Linkedin links to appropriate websites.
 -   **Expected Result:** Links to Twitter, Facebook, Linkedin links to appropriate websites.
 
-### TC_5.6 Positive with valid data.
+### TC_5.4 Positive with valid data.
 
 -   **Steps:**
     1. Open the URL: [SweetShop/login](https://sweetshop.netlify.app/login)
     2. Enter valid email and password and click 'Login' button.
 -   **Expected Result:** Login is successful, you are logged in to "Your Account" page.
 
-### TC_5.7 Negative with wrong email format.
+### TC_5.5 Negative with wrong email format.
 
 -   **Steps:**
     1. Open the URL: [SweetShop/login](https://sweetshop.netlify.app/login)
     2. Enter invalid email and click 'Login' button.
 -   **Expected Result:** Login is not successful, "Please enter a valid email address." message appears.
 
-### TC_5.8 Negative with empty email.
+### TC_5.6 Negative with empty email.
 
 -   **Steps:**
     1. Open the URL: [SweetShop/login](https://sweetshop.netlify.app/login)
     2. Login with empty email field.
 -   **Expected Result:** Login is not successful, "Please enter a valid email address." message appears.
 
-### TC_5.9 Negative with empty password.
+### TC_5.7 Negative with empty password.
 
 -   **Steps:**
     1. Open the URL: [SweetShop/login](https://sweetshop.netlify.app/login)
     2. Login with empty password field.
 -   **Expected Result:** Login is not successful, "Please enter a valid password." message appears.
 
-### TC_5.10 Negative with empty email and empty password.
+### TC_5.8 Negative with empty email and empty password.
 
 -   **Steps:**
     1. Open the URL: [SweetShop/login](https://sweetshop.netlify.app/login)
