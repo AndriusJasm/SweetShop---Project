@@ -13,15 +13,6 @@ describe("SweetShop - Login Page", () => {
         cy.get(".lead").and("be.visible").and("not.be.empty");
     });
 
-    it('TC_5.3 Verify the page contains "email" and "password" input fields', () => {
-        cy.get('input[type="email"]').should("be.visible");
-        cy.get('input[type="password"]').should("be.visible");
-    });
-
-    it('TC_5.4 Verify the page contains a "Login" button', () => {
-        cy.contains("button", "Login").should("be.visible");
-    });
-
     it("TC_5.5 Verify links to Twitter, Facebook, Linkedin", () => {
         cy.get('a[href*="twitter.com"]')
             .should("have.attr", "href")

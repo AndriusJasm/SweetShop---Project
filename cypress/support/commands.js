@@ -1,25 +1,37 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add("addRandomItemsToBasket", (count) => {
+    cy.get(".btn").then(($buttons) => {
+        const totalItems = $buttons.length;
+        const randomIndexes = [];
+
+        while (randomIndexes.length < count) {
+            const randomIndex = Math.floor(Math.random() * totalItems);
+            if (!randomIndexes.includes(randomIndex)) {
+                randomIndexes.push(randomIndex);
+            }
+        }
+
+        randomIndexes.forEach((index) => {
+            cy.wrap($buttons.eq(index)).click();
+        });
+    });
+});
+
+Cypress.Commands.add("visitMainPage", () => {
+    cy.visit("https://sweetshop.netlify.app/");
+});
+
+Cypress.Commands.add("visitSweetsPage", () => {
+    cy.visit("https://sweetshop.netlify.app/sweets");
+});
+
+Cypress.Commands.add("visitAboutPage", () => {
+    cy.visit("https://sweetshop.netlify.app/about");
+});
+
+Cypress.Commands.add("visitLoginPage", () => {
+    cy.visit("https://sweetshop.netlify.app/login");
+});
+
+Cypress.Commands.add("visitBasketPage", () => {
+    cy.visit("https://sweetshop.netlify.app/basket");
+});

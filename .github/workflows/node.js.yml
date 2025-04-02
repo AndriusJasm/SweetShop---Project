@@ -28,10 +28,3 @@ jobs:
               uses: cypress-io/github-action@v6
               with:
                   wait-on: "https://sweetshop.netlify.app" # Waits for Netlify site, no need to start local server
-
-            - name: Upload Cypress screenshots and videos (on failure)
-              if: failure()
-              uses: actions/upload-artifact@v4
-              with:
-                  name: cypress-artifacts
-                  path: cypress/screenshots/**/*
