@@ -6,21 +6,22 @@ describe("SweetShop - Basket Page (Cart)", () => {
     const deliveryStandardShipping =
         'label.custom-control-label[for="exampleRadios2"]';
     const basketContent = ".list-group";
-    const totalAmout = "li.list-group-item strong";
+    const totalAmount = "li.list-group-item strong";
     const deleteItem = ".small";
-    const numberOfItems = 5;
 
     beforeEach(() => {
         cy.visitMainPage();
     });
 
     it("TC_7.1 Add products to basket and verify count is updated", () => {
+        const numberOfItems = 5;
         cy.get(navbarMenu).contains("Sweets").click();
         cy.addRandomItemsToBasket(numberOfItems);
         cy.get(navbarBasketCount).should("contain", numberOfItems);
     });
 
     it('TC_7.2 Add products and select "Collect(FREE)" delivery', () => {
+        const numberOfItems = 6;
         cy.get(navbarMenu).contains("Sweets").click();
         cy.addRandomItemsToBasket(numberOfItems);
         cy.get(navbarMenu).contains("Basket").click();
@@ -29,12 +30,13 @@ describe("SweetShop - Basket Page (Cart)", () => {
     });
 
     it('TC_7.3 Add products and select "Standard shipping (1.99)" delivery', () => {
+        const numberOfItems = 3;
         cy.get(navbarMenu).contains("Sweets").click();
         cy.addRandomItemsToBasket(numberOfItems);
         cy.get(navbarMenu).contains("Basket").click();
 
         let initialTotal;
-        cy.get(totalAmout)
+        cy.get(totalAmount)
             .invoke("text")
             .then((text) => {
                 initialTotal = parseFloat(text.replace("£", "").trim());
@@ -42,7 +44,6 @@ describe("SweetShop - Basket Page (Cart)", () => {
 
         cy.get(deliveryStandardShipping).click();
 
-        // Verify total amount includes shipping cost (£1.99)
         cy.get(totalAmout)
             .invoke("text")
             .then((newText) => {
@@ -52,10 +53,11 @@ describe("SweetShop - Basket Page (Cart)", () => {
     });
 
     it("TC_7.4 Remove item from basket and verify count is updated", () => {
+        const numberOfItems = 9;
         cy.get(navbarMenu).contains("Sweets").click();
         cy.addRandomItemsToBasket(numberOfItems);
         cy.get(navbarMenu).contains("Basket").click();
-        // Verify Initial Basket Count
+
         cy.get(navbarBasketCount)
             .should("be.visible")
             .invoke("text")
@@ -66,10 +68,8 @@ describe("SweetShop - Basket Page (Cart)", () => {
 
         cy.get(deleteItem).first().click();
 
-        // Handle Confirmation Popup
         cy.on("window:confirm", () => true);
 
-        // Verify Basket Count is Updated
         cy.get(navbarBasketCount)
             .should("be.visible")
             .invoke("text")
@@ -80,6 +80,7 @@ describe("SweetShop - Basket Page (Cart)", () => {
     });
 
     it("TC_7.5 Empty basket and verify it is empty", () => {
+        const numberOfItems = 7;
         cy.get(navbarMenu).contains("Sweets").click();
         cy.addRandomItemsToBasket(numberOfItems);
         cy.get(navbarMenu).contains("Sweets").click();
@@ -111,7 +112,6 @@ describe("SweetShop - Basket Page (Cart)", () => {
             }
         });
 
-        // Patikriname, ar krepšelyje neberodo elemento, rodančio prekių kiekį
         cy.get(".basketCount", { timeout: 10000 }).should("not.exist");
     });
 });
