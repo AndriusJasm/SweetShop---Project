@@ -27,4 +27,4 @@ jobs:
             - name: Run Cypress tests
               uses: cypress-io/github-action@v6
               with:
-                  wait-on: "https://sweetshop.netlify.app" # Waits for Netlify site, no need to start local server
+                  wait-on: "https://sweetshop.netlify.app"
