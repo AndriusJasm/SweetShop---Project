@@ -1,4 +1,4 @@
-# Test Scenarios and Test Cases for SweetShop Website
+# Test Scenarios and Test Cases for ![alt text](image.png)SweetShop Website
 
 Automated end-to-end testing for the **Sweet Shop** web application using **Cypress**.
 
@@ -39,11 +39,13 @@ All Test Scenarios (TS) and Test Cases (TC) are described in the [**TestCases.md
 │   └── e2e.js # Cypress setup 
 ├── node_modules/ # Dependencies 
 ├── .gitignore # Git ignore file 
-├── cypress.config.js # Cypress configuration 
+├── cypress.config.js # Cypress configuration
+├── LICENSE # MIT license  
 ├── package-lock.json # Dependency lockfile 
 ├── package.json # Dependencies & scripts
 ├── README.md # Project description  
-└── TestCases.md # Test cases documentation </pre>
+├── TestCases.md # Test cases documentation
+└── TesResults.png # Screenshot of Testing Results </pre>
 
 ---
 
@@ -121,7 +123,7 @@ The GitHub Actions workflow **(.github/workflows/node.js.yml)** performs the fol
 
 ## License
 
-MIT License © 2025 Your Name.
+MIT License: Copyright (c) 2025 AndriusJasm
 
 ---
 
