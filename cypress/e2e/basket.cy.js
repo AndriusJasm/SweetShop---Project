@@ -44,7 +44,7 @@ describe("SweetShop - Basket Page (Cart)", () => {
 
         cy.get(deliveryStandardShipping).click();
 
-        cy.get(totalAmout)
+        cy.get(totalAmount)
             .invoke("text")
             .then((newText) => {
                 const finalTotal = parseFloat(newText.replace("£", "").trim());
