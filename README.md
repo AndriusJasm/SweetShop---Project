@@ -1,14 +1,14 @@
-# Test Scenarios and Test Cases for ![alt text](image.png)SweetShop Website
+# ![](pics/scenario.png) Test Scenarios and Test Cases for ![](pics/image.png)SweetShop Website
 
 Automated end-to-end testing for the **Sweet Shop** web application using **Cypress**.
 
-**Live App**: [**Sweet Shop**](https://sweetshop.netlify.app)
+**Live App**: ![](pics/candy.png)[**Sweet Shop**](https://sweetshop.netlify.app)
 
 ---
 
-## Description
+## ![](pics/description.png) Description
 
-The project includes automated Cypress tests that verify the core functionalities of the **Home pge**, **Navigation Bar**, **Sweets**, **About**, **Login**, **Account**, and **Basket** pages.
+The project includes automated Cypress tests that verify the core functionalities of the **Home**, **Navigation Bar**, **Sweets**, **About**, **Login**, **Account** and **Basket** pages.
 
 These features are thoroughly tested using:
 
@@ -17,39 +17,44 @@ These features are thoroughly tested using:
 
 All Test Scenarios (TS) and Test Cases (TC) are described in the [**TestCases.md**](/TestCases.md) file.
 
----
-
-## Folder Structure
-
-<pre> SWEETSHOP_PROJECT 
-├── .github/ 
-│ └── workflows/ # GitHub Actions workflow for CI 
-├── cypress/ 
-│ ├── e2e/ # End-to-end test specs 
-│ │ ├── about.cy.js 
-│ │ ├── account.cy.js 
-│ │ ├── basket.cy.js 
-│ │ ├── home.cy.js
-│ │ ├── login.cy.js 
-│ │ ├── navbar.cy.js 
-│ │ └── sweets.cy.js 
-│ ├── fixtures/ # Test data (example.json) 
-│ └── support/ # Custom Cypress commands 
-│   ├── commands.js 
-│   └── e2e.js # Cypress setup 
-├── node_modules/ # Dependencies 
-├── .gitignore # Git ignore file 
-├── cypress.config.js # Cypress configuration
-├── LICENSE # MIT license  
-├── package-lock.json # Dependency lockfile 
-├── package.json # Dependencies & scripts
-├── README.md # Project description  
-├── TestCases.md # Test cases documentation
-└── TesResults.png # Screenshot of Testing Results </pre>
+Project progress was controlled using **Jira**, all actions are described in the [**JiraProject.md**](/JiraProject.md) file.
 
 ---
 
-## Installation
+## ![](pics/project.png) Project Structure
+
+-   ![](pics/folder.png) SWEETSHOP_PROJECT
+-   ├── ![](pics/folder.png) .github/
+-   │ └── ![](pics/folder.png) workflows/ # GitHub Actions workflow for CI
+-   │ └── ![](pics/file.png) node.js.yml
+-   ├── ![](pics/folder.png) cypress/
+-   │ ├── ![](pics/folder.png) e2e/ # End-to-end test specs
+-   │ │ ├── ![](pics/file.png) about.cy.js
+-   │ │ ├── ![](pics/file.png) account.cy.js
+-   │ │ ├── ![](pics/file.png) basket.cy.js
+-   │ │ ├── ![](pics/file.png) home.cy.js
+-   │ │ ├── ![](pics/file.png) login.cy.js
+-   │ │ ├── ![](pics/file.png) navbar.cy.js
+-   │ │ └── ![](pics/file.png) sweets.cy.js
+-   │ ├── ![](pics/folder.png) fixtures/ # Test data (example.json)
+-   │ └── ![](pics/folder.png) support/ # Custom Cypress commands
+-   │ ├── ![](pics/file.png) commands.js
+-   │ └── ![](pics/file.png) e2e.js # Cypress setup
+-   ├── ![](pics/folder.png) node_modules/ # Dependencies
+-   ├── ![](pics/folder.png) pics/ # Project pictures
+-   ├── ![](pics/file.png) .gitignore # Git ignore file
+-   ├── ![](pics/file.png) cypress.config.js # Cypress configuration
+-   ├── ![](pics/file.png) JiraProject.md # Jira project description
+-   ├── ![](pics/file.png) LICENSE # MIT license
+-   ├── ![](pics/file.png) package-lock.json # Dependency lockfile
+-   ├── ![](pics/file.png) package.json # Dependencies & scripts
+-   ├── ![](pics/file.png) README.md # Project description
+-   ├── ![](pics/file.png) TestCases.md # Test cases documentation
+-   └── ![](pics/file.png) TesResults.png # Screenshot of Testing Results
+
+---
+
+## ![](pics/installation.png) Installation
 
 ### 1️ Prerequisites
 
@@ -72,7 +77,7 @@ npm install
 
 ---
 
-## Running Tests
+## ![](pics/tester.png) Running Tests
 
 ### Run Cypress in UI Mode
 
@@ -88,7 +93,7 @@ npm run cy:run
 
 ---
 
-## Cypress Commands
+## ![](pics/command.png) Cypress Commands
 
 | Command                               | Purpose                     |
 | ------------------------------------- | --------------------------- |
@@ -102,31 +107,30 @@ npm run cy:run
 
 ---
 
-## CI/CD with GitHub Actions
+## ![](pics/action.png) CI/CD with GitHub Actions
 
 The workflow is triggered on push and pull requests to the main branch.  
 The GitHub Actions workflow **(.github/workflows/node.js.yml)** performs the following steps:
 
--   Checks out the repository using actions/checkout@v4.
--   Installs dependencies using npm install.
 -   Sets up Node.js version 18.
+-   Installs dependencies using npm install.
 -   Runs Cypress tests for end-to-end testing.
 -   Executes Cypress tests using cypress-io/github-action@v6.
 
 ---
 
-## Screenshot of Testing Results
+## ![](pics/screenshot.png) Screenshot of Testing Results
 
-![](TestResults.png)
+![](pics/TestResults.png)
 
 ---
 
-## License
+## ![](pics/license.png) License
 
 MIT License: Copyright (c) 2025 AndriusJasm
 
 ---
 
-## Author
+## ![](pics/author.png) Author
 
 Andrius Jasmontas
